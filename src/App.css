@@ -25,3 +25,8 @@ th {
 td {
   background-color: rgb(201, 176, 227);
 }
+
+form {
+  display: flex;
+  gap: 5px;
+}

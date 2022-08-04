@@ -21,6 +21,14 @@ function App() {
           </tr>
         </tbody>
       </table>
+      <h2>Add New Contact</h2>
+      <form>
+        <input type="text" name="fullName" required="required" placeholder="Enter full name..." />
+        <input type="text" name="address" required="required" placeholder="Enter address..." />
+        <input type="text" name="number" required="required" placeholder="Enter phone number..." />
+        <input type="email" name="email" required="required" placeholder="Enter email..." />
+        <button type="submit">Add</button>
+      </form>
     </div>
   );
 }
