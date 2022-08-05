@@ -4,6 +4,7 @@ import { nanoid } from "nanoid";
 import "./App.css";
 
 import ReadOnlyRow from "./Components/ReadOnlyRow";
+import EditableRow from "./Components/EditableRow";
 
 function App() {
   const [contacts, setContacts] = useState([]);
@@ -45,21 +46,27 @@ function App() {
 
   return (
     <div className="app-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          {contacts.map((contact) => (
-            <ReadOnlyRow contact={contact} />
-          ))}
-        </tbody>
-      </table>
+      <form>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {contacts.map((contact) => (
+              <>
+                <EditableRow />
+                <ReadOnlyRow contact={contact} />
+              </>
+            ))}
+          </tbody>
+        </table>
+      </form>
+
       <h2>Add New Contact</h2>
       <form onSubmit={handleSubmit}>
         <input
