@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import {nanoid} from "nanoid";
 
 import "./App.css";
 
 function App() {
+  const [contacts, setContacts] = useState([])
   const [formData, setFormData] = useState({
     fullName: "",
     address: "",
@@ -26,13 +28,14 @@ function App() {
     e.preventDefault();
 
   const newContact = {
-    id: 
+    id: nanoid(),
     fullName: formData.fullName,
     address: formData.address,
     number: formData.number,
     email: formData.email
   }
 
+  
 
   };
 
