@@ -13,9 +13,8 @@ table {
 th,
 td {
   border: 1px solid #fff;
-  text-align: left;
   padding: 10px;
-  font-size: 32px;
+  font-size: 18px;
 }
 
 th {
