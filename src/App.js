@@ -18,8 +18,22 @@ function App() {
 
     const newData = { ...formData };
     newData[fieldName] = fieldValue;
-console.log(newData);
+    console.log(newData);
     setFormData(newData);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+  const newContact = {
+    id: 
+    fullName: formData.fullName,
+    address: formData.address,
+    number: formData.number,
+    email: formData.email
+  }
+
+
   };
 
   return (
