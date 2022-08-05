@@ -7,8 +7,20 @@ function App() {
     fullName: "",
     address: "",
     number: "",
-    email: ""
+    email: "",
   });
+
+  const handleFormChange = (e) => {
+    e.preventDefault();
+
+    const fieldName = e.target.name;
+    const fieldValue = e.target.value;
+
+    const newData = { ...formData };
+    newData[fieldName] = fieldValue;
+console.log(newData);
+    setFormData(newData);
+  };
 
   return (
     <div className="app-container">
@@ -37,24 +49,28 @@ function App() {
           name="fullName"
           required="required"
           placeholder="Enter full name..."
+          onChange={handleFormChange}
         />
         <input
           type="text"
           name="address"
           required="required"
           placeholder="Enter address..."
+          onChange={handleFormChange}
         />
         <input
           type="text"
           name="number"
           required="required"
           placeholder="Enter phone number..."
+          onChange={handleFormChange}
         />
         <input
           type="email"
           name="email"
           required="required"
           placeholder="Enter email..."
+          onChange={handleFormChange}
         />
         <button type="submit">Add</button>
       </form>
