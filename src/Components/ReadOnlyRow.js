@@ -1,4 +1,4 @@
-export default function ReadOnlyRow({ contact }) {
+export default function ReadOnlyRow({ contact, handleEditClick }) {
   return (
     <tr>
       <td>{contact.fullName}</td>

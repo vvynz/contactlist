@@ -69,7 +69,10 @@ function App() {
                 { editContactID === contact.id ? (
                   <EditableRow />
                 ) : (
-                  <ReadOnlyRow contact={contact} />
+                  <ReadOnlyRow 
+                  contact={contact} 
+                  handleEditClick={handleEditClick} 
+                  />
                 )}
               </>
             ))}
