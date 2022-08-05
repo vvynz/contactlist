@@ -45,7 +45,10 @@ function App() {
   };
   // console.log(contacts)
 
-  const handleEditClick = (e, contact) =>{}
+  const handleEditClick = (e, contact) =>{
+    e.preventDefault();
+    setEditContactID(contact.id);
+  }
 
   return (
     <div className="app-container">
