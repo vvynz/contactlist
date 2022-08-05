@@ -52,16 +52,18 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Kim Seokjin</td>
-            <td>123 Gangnam St</td>
-            <td>10-613-0709</td>
-            <td>jinhit@hybe.com</td>
-          </tr>
+          {contacts.map((contact) => (
+            <tr>
+              <td>{contact.fullName}</td>
+              <td>{contact.address}</td>
+              <td>{contact.number}</td>
+              <td>{contact.email}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
       <h2>Add New Contact</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="fullName"
