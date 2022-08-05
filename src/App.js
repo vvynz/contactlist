@@ -3,6 +3,8 @@ import { nanoid } from "nanoid";
 
 import "./App.css";
 
+import ReadOnlyRow from "./Components/ReadOnlyRow";
+
 function App() {
   const [contacts, setContacts] = useState([]);
   const [formData, setFormData] = useState({
@@ -20,7 +22,7 @@ function App() {
 
     const newData = { ...formData };
     newData[fieldName] = fieldValue;
-    console.log(newData);
+    // console.log(newData);
     setFormData(newData);
   };
 
@@ -39,6 +41,7 @@ function App() {
     const newContacts = [...contacts, newContact];
     setContacts(newContacts);
   };
+  // console.log(contacts)
 
   return (
     <div className="app-container">
@@ -53,12 +56,7 @@ function App() {
         </thead>
         <tbody>
           {contacts.map((contact) => (
-            <tr>
-              <td>{contact.fullName}</td>
-              <td>{contact.address}</td>
-              <td>{contact.number}</td>
-              <td>{contact.email}</td>
-            </tr>
+            <ReadOnlyRow contact={contact} />
           ))}
         </tbody>
       </table>
