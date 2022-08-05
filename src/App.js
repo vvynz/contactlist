@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import {nanoid} from "nanoid";
+import { nanoid } from "nanoid";
 
 import "./App.css";
 
 function App() {
-  const [contacts, setContacts] = useState([])
+  const [contacts, setContacts] = useState([]);
   const [formData, setFormData] = useState({
     fullName: "",
     address: "",
@@ -27,16 +27,17 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-  const newContact = {
-    id: nanoid(),
-    fullName: formData.fullName,
-    address: formData.address,
-    number: formData.number,
-    email: formData.email
-  }
+    const newContact = {
+      id: nanoid(),
+      fullName: formData.fullName,
+      address: formData.address,
+      number: formData.number,
+      email: formData.email,
+    };
 
-  
-
+    // create new contacts array before mutating state
+    const newContacts = [...contacts, newContact];
+    setContacts(newContacts);
   };
 
   return (
