@@ -5,6 +5,11 @@ export default function ReadOnlyRow({ contact, handleEditClick }) {
       <td>{contact.address}</td>
       <td>{contact.number}</td>
       <td>{contact.email}</td>
+      <td>
+        <button type="button" onClick={(e) => handleEditClick(e, contact)}>
+          Edit
+        </button>
+      </td>
     </tr>
   );
 }

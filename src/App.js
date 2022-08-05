@@ -8,7 +8,7 @@ import EditableRow from "./Components/EditableRow";
 
 function App() {
   const [contacts, setContacts] = useState([]);
-  const [editContactID, setEditContactID] = useState(1);
+  const [editContactID, setEditContactID] = useState(null);
   const [formData, setFormData] = useState({
     fullName: "",
     address: "",
