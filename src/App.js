@@ -8,7 +8,7 @@ import EditableRow from "./Components/EditableRow";
 
 function App() {
   const [contacts, setContacts] = useState([]);
-  const [editContactID, setEditContactID] = useState(null);
+  const [editContactID, setEditContactID] = useState(1);
   const [formData, setFormData] = useState({
     fullName: "",
     address: "",
@@ -45,6 +45,8 @@ function App() {
   };
   // console.log(contacts)
 
+  const handleEditClick = (e, contact) =>{}
+
   return (
     <div className="app-container">
       <form>
@@ -55,6 +57,7 @@ function App() {
               <th>Address</th>
               <th>Phone Number</th>
               <th>Email</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
