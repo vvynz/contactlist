@@ -1,4 +1,4 @@
-export default function EditableRow({ editFormData, handleEditFormChange }) {
+export default function EditableRow({ editFormData, handleEditFormChange, handleCancelClick }) {
   return (
     <tr>
       <td>
