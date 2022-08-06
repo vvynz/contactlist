@@ -66,7 +66,7 @@ function App() {
     setEditFormData(formValues);
   };
 
-  const handleEditFormChange = () => {
+  const handleEditFormChange = (e) => {
     e.preventDefault();
 
     const fieldName = e.target.name;
