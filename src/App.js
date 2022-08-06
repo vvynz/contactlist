@@ -15,6 +15,12 @@ function App() {
     number: "",
     email: "",
   });
+  const [editFormData, setEditFormData] = useState({
+    fullName: "",
+    address: "",
+    number: "",
+    email: "",
+  });
 
   const handleFormChange = (e) => {
     e.preventDefault();
@@ -45,10 +51,10 @@ function App() {
   };
   // console.log(contacts)
 
-  const handleEditClick = (e, contact) =>{
+  const handleEditClick = (e, contact) => {
     e.preventDefault();
     setEditContactID(contact.id);
-  }
+  };
 
   return (
     <div className="app-container">
@@ -66,12 +72,12 @@ function App() {
           <tbody>
             {contacts.map((contact) => (
               <>
-                { editContactID === contact.id ? (
+                {editContactID === contact.id ? (
                   <EditableRow />
                 ) : (
-                  <ReadOnlyRow 
-                  contact={contact} 
-                  handleEditClick={handleEditClick} 
+                  <ReadOnlyRow
+                    contact={contact}
+                    handleEditClick={handleEditClick}
                   />
                 )}
               </>
