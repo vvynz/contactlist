@@ -78,9 +78,34 @@ function App() {
     setEditFormData(updFormData);
   };
 
+  const handleEditFormSubmit = (e) => {
+    e.preventDefault();
+
+    // create a new object based on the new form values during editing
+    const editedContact = {
+      id: editContactID,
+      fullName: editFormData.fullName,
+      address: editFormData.address,
+      number: editFormData.number,
+      email: editFormData.email,
+    };
+
+    // create a copy of the contacts array so we don't mutate the state
+    const newContacts = [...contacts];
+
+    // find the index of the current row being edited
+    const index = contacts.findIndex((contact) => contact.id === editContactID);
+    // update the array at the given row
+    newContacts[index] = editedContact;
+
+    // update the setContacts with the updated array of newContacts
+    setContacts(newContacts);
+    setEditContactID(null);
+  };
+
   return (
     <div className="app-container">
-      <form>
+      <form onSubmit={handleEditFormSubmit}>
         <table>
           <thead>
             <tr>
