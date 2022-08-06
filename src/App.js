@@ -95,7 +95,10 @@ function App() {
             {contacts.map((contact) => (
               <>
                 {editContactID === contact.id ? (
-                  <EditableRow />
+                  <EditableRow
+                    editFormData={editFormData}
+                    handleEditFormChange={handleEditFormChange}
+                  />
                 ) : (
                   <ReadOnlyRow
                     contact={contact}
