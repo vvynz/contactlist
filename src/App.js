@@ -56,6 +56,17 @@ function App() {
     setEditContactID(contact.id);
   };
 
+  const handleEditFormChange = () => {
+    e.preventDefault();
+
+    const fieldName = e.target.name;
+    const fieldValue = e.target.value;
+
+    const updFormData = { ...editFormData };
+    updFormData[fieldName] = fieldValue;
+    setEditFormData(updFormData);
+  };
+
   return (
     <div className="app-container">
       <form>
