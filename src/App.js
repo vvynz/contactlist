@@ -54,6 +54,16 @@ function App() {
   const handleEditClick = (e, contact) => {
     e.preventDefault();
     setEditContactID(contact.id);
+
+    // create a new obj of form values before we save to state
+    const formValues = {
+      fullName: contact.fullName,
+      address: contact.address,
+      number: contact.number,
+      email: contact.email,
+    };
+
+    setEditFormData(formValues);
   };
 
   const handleEditFormChange = () => {
@@ -62,6 +72,7 @@ function App() {
     const fieldName = e.target.name;
     const fieldValue = e.target.value;
 
+    // create a new obj with the updated values before saving to state
     const updFormData = { ...editFormData };
     updFormData[fieldName] = fieldValue;
     setEditFormData(updFormData);
