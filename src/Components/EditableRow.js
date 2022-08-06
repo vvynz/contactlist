@@ -43,6 +43,7 @@ export default function EditableRow({ editFormData, handleEditFormChange, handle
       </td>
       <td>
         <button type="submit">Save</button>
+        <button type="button" onClick={handleCancelClick}>Cancel</button>
       </td>
     </tr>
   );
