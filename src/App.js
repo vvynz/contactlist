@@ -30,7 +30,7 @@ function App() {
 
     const newData = { ...formData };
     newData[fieldName] = fieldValue;
-    // console.log(newData);
+
     setFormData(newData);
   };
 
@@ -49,7 +49,6 @@ function App() {
     const newContacts = [...contacts, newContact];
     setContacts(newContacts);
   };
-  // console.log(contacts)
 
   const handleEditClick = (e, contact) => {
     e.preventDefault();
