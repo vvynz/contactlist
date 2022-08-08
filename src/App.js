@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 
 import "./App.css";
@@ -7,7 +7,7 @@ import ReadOnlyRow from "./Components/ReadOnlyRow";
 import EditableRow from "./Components/EditableRow";
 
 function App() {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState(()=> JSON.parse(localStorage.getItem("contacts")) || []);
   const [editContactID, setEditContactID] = useState(null);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -21,6 +21,10 @@ function App() {
     number: "",
     email: "",
   });
+
+  useEffect(() => {
+    localStorage.setItem("contacts", JSON.stringify(contacts));
+  }, [contacts]);
 
   const handleFormChange = (e) => {
     e.preventDefault();
