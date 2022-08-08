@@ -107,6 +107,18 @@ function App() {
     setEditContactID(null);
   }
 
+  const deleteContact = (contactID) => {
+    const newContacts = [...contacts];
+
+    const index = contacts.findIndex((contact) => contact.id === contactID);
+
+    //remove the item of the array
+    newContacts.splice(index, 1);
+
+    // set the new edited array into state.
+    setContacts(newContacts);
+  }
+
   return (
     <div className="app-container">
       <form onSubmit={handleEditFormSubmit}>
