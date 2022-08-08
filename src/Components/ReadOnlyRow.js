@@ -1,4 +1,8 @@
-export default function ReadOnlyRow({ contact, handleEditClick }) {
+export default function ReadOnlyRow({
+  contact,
+  handleEditClick,
+  deleteContact,
+}) {
   return (
     <tr>
       <td>{contact.fullName}</td>
@@ -8,6 +12,9 @@ export default function ReadOnlyRow({ contact, handleEditClick }) {
       <td>
         <button type="button" onClick={(e) => handleEditClick(e, contact)}>
           Edit
+        </button>
+        <button type="button" onClick={() => deleteContact(contact.id)}>
+          Delete
         </button>
       </td>
     </tr>

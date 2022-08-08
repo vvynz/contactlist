@@ -1,4 +1,8 @@
-export default function EditableRow({ editFormData, handleEditFormChange, handleCancelClick }) {
+export default function EditableRow({
+  editFormData,
+  handleEditFormChange,
+  handleCancelClick,
+}) {
   return (
     <tr>
       <td>
@@ -43,7 +47,9 @@ export default function EditableRow({ editFormData, handleEditFormChange, handle
       </td>
       <td>
         <button type="submit">Save</button>
-        <button type="button" onClick={handleCancelClick}>Cancel</button>
+        <button type="button" onClick={handleCancelClick}>
+          Cancel
+        </button>
       </td>
     </tr>
   );

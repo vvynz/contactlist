@@ -105,7 +105,7 @@ function App() {
 
   const handleCancelClick = () => {
     setEditContactID(null);
-  }
+  };
 
   const deleteContact = (contactID) => {
     const newContacts = [...contacts];
@@ -117,7 +117,7 @@ function App() {
 
     // set the new edited array into state.
     setContacts(newContacts);
-  }
+  };
 
   return (
     <div className="app-container">
@@ -145,6 +145,7 @@ function App() {
                   <ReadOnlyRow
                     contact={contact}
                     handleEditClick={handleEditClick}
+                    deleteContact={deleteContact}
                   />
                 )}
               </>
